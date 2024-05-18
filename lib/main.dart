@@ -1,3 +1,4 @@
+import 'package:bagapp/screens/registration.dart';
 import 'package:bagapp/screens/splashpage.dart';
 import 'package:flutter/material.dart';
 
@@ -12,7 +13,9 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: SplashPage(),
+      debugShowCheckedModeBanner: false,
+      //home: SplashPage(),
+      home: Registration(),
     );
   }
 }

@@ -1,3 +1,4 @@
+import 'package:bagapp/screens/registration.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:bagapp/utils/mycolors.dart';
@@ -43,7 +44,7 @@ class _LoginPageState extends State<LoginPage> {
                     //fontWeight:FontWeight.bold,
                     color:MyColors.basicColor,),
               ),
-              SizedBox(height: 60,),
+              const SizedBox(height: 60,),
              // Text("Email",style: TextStyle(color: MyColors.basicColor,fontWeight: FontWeight.bold),),
               TextField(
                 controller: userController,
@@ -99,11 +100,13 @@ class _LoginPageState extends State<LoginPage> {
                     color: Colors.white),),),
 
              // const SizedBox(height: 30),
-               SizedBox(height: 10,),
-               Text("or, Create a new account",style: TextStyle(color: Colors.black54),),
-              SizedBox(height: 10,),
+               const SizedBox(height: 10,),
+               const Text("or, Create a new account",style: TextStyle(color: Colors.black54),),
+              const SizedBox(height: 10,),
               MaterialButton(
-                onPressed: (){},
+                onPressed: (){
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => Registration()));
+                },
                 color: MyColors.basicColor,
                 minWidth: 300,
                 shape: const StadiumBorder(),
@@ -112,17 +115,17 @@ class _LoginPageState extends State<LoginPage> {
                     fontWeight:FontWeight.bold,
                     color: Colors.white),),
               ),
-              SizedBox(height: 15,),
-              Text("Login with",style: TextStyle(color: Colors.black54),),
-              SizedBox(height: 20,),
+              const SizedBox(height: 15,),
+              const Text("Login with",style: TextStyle(color: Colors.black54),),
+              const SizedBox(height: 20,),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Icon(FontAwesomeIcons.facebook,color: Colors.blue[700],),
-                  SizedBox(width: 15,),
-                  Icon(FontAwesomeIcons.google,color: Colors.green,),
-                  SizedBox(width: 15,),
-                  Icon(FontAwesomeIcons.twitter,color: Colors.blue,)
+                  const SizedBox(width: 15,),
+                  const Icon(FontAwesomeIcons.google,color: Colors.green,),
+                  const SizedBox(width: 15,),
+                  const Icon(FontAwesomeIcons.twitter,color: Colors.blue,)
                 ],
               )
 
