@@ -1,3 +1,4 @@
+import 'package:bagapp/screens/page1.dart';
 import 'package:bagapp/screens/registration.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -34,62 +35,69 @@ class _LoginPageState extends State<LoginPage> {
         body: Padding(
           padding: const EdgeInsets.all(18.0),
           child: Column(
-           // mainAxisAlignment: MainAxisAlignment.center,
-           // crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               const SizedBox(height: 130), // Adding space at the top
               Text("Login To Active eCommerce",
                 style: GoogleFonts.archivoBlack(
-                    fontSize: 20   ,
-                    //fontWeight:FontWeight.bold,
-                    color:MyColors.basicColor,),
+                  fontSize: 20   ,
+                  //fontWeight:FontWeight.bold,
+                  color:MyColors.basicColor,),
               ),
               const SizedBox(height: 60,),
-             // Text("Email",style: TextStyle(color: MyColors.basicColor,fontWeight: FontWeight.bold),),
-              TextField(
-                controller: userController,
-                decoration: const InputDecoration(
-                    prefixIcon: Icon(Icons.person_outline_outlined),
-                    border: OutlineInputBorder(),
-                   // labelText: "Email",
-                    hintText: "Enter Your Email"
-                ),),
+              Column(
+               // mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
 
-              const SizedBox(height: 30,),
-            //  Text("Password",style: TextStyle(color: MyColors.basicColor,fontWeight: FontWeight.bold),),
-              TextFormField(
-                controller: pwdController ,
-                obscureText:pwd_visibility ,
-                obscuringCharacter: '*',
-                decoration: InputDecoration(
-                    prefixIcon:const Icon(Icons.password_outlined),
-                    suffixIcon: IconButton(onPressed: (){
-                      setState(() {
-                        if(pwd_visibility==true){
-                          pwd_visibility=false;
-                        }else{
-                          pwd_visibility=true;
-                        }
-                      });
-                    }, icon: Icon(
-                        pwd_visibility==true? Icons.visibility_off : Icons.visibility
-                    )),
-                    border: const OutlineInputBorder(),
-                   // labelText: "Password",
-                    hintText: "Enter Your Password",
-                   // helperText: "Password must contain Upper and lowercase letters"
-                ),),
-              const SizedBox(height: 30,),
+                  Text("Email",style: TextStyle(color: MyColors.basicColor,fontWeight: FontWeight.bold),),
+                  TextField(
+                    controller: userController,
+                    decoration: const InputDecoration(
+                        prefixIcon: Icon(Icons.person_outline_outlined),
+                        border: OutlineInputBorder(),
+                       // labelText: "Email",
+                        hintText: "Enter Your Email"
+                    ),),
+
+                  const SizedBox(height: 30,),
+                  Text("Password",style: TextStyle(color: MyColors.basicColor,fontWeight: FontWeight.bold),),
+                  TextFormField(
+                    controller: pwdController ,
+                    obscureText:pwd_visibility ,
+                    obscuringCharacter: '*',
+                    decoration: InputDecoration(
+                        prefixIcon:const Icon(Icons.password_outlined),
+                        suffixIcon: IconButton(onPressed: (){
+                          setState(() {
+                            if(pwd_visibility==true){
+                              pwd_visibility=false;
+                            }else{
+                              pwd_visibility=true;
+                            }
+                          });
+                        }, icon: Icon(
+                            pwd_visibility==true? Icons.visibility_off : Icons.visibility
+                        )),
+                        border: const OutlineInputBorder(),
+                       // labelText: "Password",
+                        hintText: "Enter Your Password",
+                       // helperText: "Password must contain Upper and lowercase letters"
+                    ),),
+                  const SizedBox(height: 30,),
+
+                ],
+              ),
               MaterialButton(
                 onPressed: (){
-                 // if(username==userController.text && password== pwdController.text){
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=>Page1()));
+                  // if(username==userController.text && password== pwdController.text){
                   //  Navigator.push(context, MaterialPageRoute(builder: (context)=>HomePage1()));
-                   // successSnackbar(context);
-                 // }else{
-                   // errorSnackbar(context);
-                //  }
+                  // successSnackbar(context);
+                  // }else{
+                  // errorSnackbar(context);
+                  //  }
                   //userController.clear();
-                 // pwdController.clear();
+                  // pwdController.clear();
                 },
                 color: MyColors.basicColor,
                 minWidth: 300,
@@ -99,9 +107,9 @@ class _LoginPageState extends State<LoginPage> {
                     fontWeight:FontWeight.bold,
                     color: Colors.white),),),
 
-             // const SizedBox(height: 30),
-               const SizedBox(height: 10,),
-               const Text("or, Create a new account",style: TextStyle(color: Colors.black54),),
+              // const SizedBox(height: 30),
+              const SizedBox(height: 10,),
+              const Text("or, Create a new account",style: TextStyle(color: Colors.black54),),
               const SizedBox(height: 10,),
               MaterialButton(
                 onPressed: (){

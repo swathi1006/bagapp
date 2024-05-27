@@ -1,3 +1,4 @@
+import 'package:bagapp/screens/page1.dart';
 import 'package:bagapp/screens/registration.dart';
 import 'package:bagapp/screens/splashpage.dart';
 import 'package:flutter/material.dart';
@@ -15,7 +16,8 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       //home: SplashPage(),
-      home: Registration(),
+      //home: Registration(),
+      home: Page1(),
     );
   }
 }
